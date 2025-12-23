@@ -4,9 +4,8 @@ const cookieParser = require("cookie-parser");
 
 const cors = require("cors");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 //-----------------------------------
-const admin = require("firebase-admin");
 
 //----------------------------
 const app = express();
@@ -15,12 +14,13 @@ const corsOptions = {
     "http://localhost:5173",
     "http://localhost:5174",
     "https://flourishing-kelpie-5b7554.netlify.app",
+    "https://leaflinik.netlify.app/",
   ],
   credentials: true,
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-const jwt = require("jsonwebtoken");
+
 app.use(express.json());
 app.use(cookieParser());
 
